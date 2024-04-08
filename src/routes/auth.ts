@@ -1,11 +1,11 @@
-import { t } from "elysia";
-import { eq } from "drizzle-orm";
 import { hash, verify } from "argon2";
+import { eq } from "drizzle-orm";
+import { t } from "elysia";
 import jwt from "jsonwebtoken";
-import { createElysia } from "../utils/elysia";
 import { db } from "../db/client";
 import { tokens, users } from "../db/schemas";
 import { env } from "../env";
+import { createElysia } from "../utils/elysia";
 
 export const authRoute = createElysia()
 	.post(
